@@ -8,7 +8,8 @@ class BasicSyntax : Exercicio {
 //        e1();
 //        e2();
 //        e3();
-        e4();
+//        e4();
+        e5();
     }
 
     fun e1(): Unit {
@@ -34,6 +35,12 @@ class BasicSyntax : Exercicio {
         println("${if(a == null) 0 else a} + $b = ${soma2(a, b)}")
     }
 
+    fun e5(): Unit {
+        val texto = "carro"
+        val resultado = tamanhoDoTexto(texto)
+        println("Tamanho do texto \"$texto\" = $resultado")
+    }
+
     fun soma(a: Int, b: Int) = a + b
     /*fun soma(a: Int, b: Int): Int {
         return a + b
@@ -47,6 +54,13 @@ class BasicSyntax : Exercicio {
         } else {
             return b
         }
+    }
+
+    fun tamanhoDoTexto(obj: Any): Int? {
+        if (obj is String)
+            return obj.length
+        else
+            return null
     }
 
 }
