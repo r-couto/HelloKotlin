@@ -1,4 +1,10 @@
+import interfaces.Exercicio
+import GettingStarted.BasicSyntax
+
 fun main(args: Array<String>) {
-    println("Hello, world!");
-    println("HelloKotlin")
+
+    var exercicio: Exercicio;
+    exercicio = BasicSyntax();
+
+    exercicio.executar();
 }
