@@ -5,46 +5,45 @@ import interfaces.Exercicio
 class BasicSyntax : Exercicio {
 
     override fun executar() {
-        e10();
+        e10()
     }
 
-    fun e1(): Unit {
+    private fun e1() {
         println("HelloKotlin")
     }
-    fun e2(): Unit {
+
+    private fun e2() {
         val a = 11
         val b = 25
         println("$a + $b = ${soma(a, b)}")
-//        val resultado = soma(a, b)
-//        println("${a} + ${b} = ${resultado}")
     }
 
-    fun e3(): Unit {
+    private fun e3() {
         val a = 11
         val b = 25
         println("Maior entre $a e $b = ${maior(a, b)}")
     }
 
-    fun e4(): Unit {
-        val a: Int? = 5
+    private fun e4() {
+        val a: Int? = null
         val b = 25
         println("${if(a == null) 0 else a} + $b = ${soma2(a, b)}")
     }
 
-    fun e5(): Unit {
+    private fun e5() {
         val texto = "carro"
         val resultado = tamanhoDoTexto(texto)
         println("Tamanho do texto \"$texto\" = $resultado")
     }
 
-    fun e6(): Unit {
+    private fun e6() {
         val lista = listOf("maçã", "abacaxi", "uva")
          for (item in lista.indices) {
              println("$item -> ${lista[item]}")
          }
     }
 
-    fun e7(): Unit {
+    private fun e7() {
         val lista = listOf("livro", "revista", "quadrinhos")
         var index = 0
         while (index < lista.size) {
@@ -53,7 +52,7 @@ class BasicSyntax : Exercicio {
         }
     }
 
-    fun e8(): Unit {
+    private fun e8() {
         val numero: Any = "2"
         when (numero) {
             "1"     -> println("um")
@@ -68,7 +67,7 @@ class BasicSyntax : Exercicio {
         }
     }
 
-    fun e9(): Unit {
+    private fun e9() {
         val lista = listOf("livro", "revista", "quadrinhos")
 
         if ("livro" in lista) {
@@ -77,16 +76,16 @@ class BasicSyntax : Exercicio {
             println("não está na lista")
         }
 
-        for (numero in 1..10 step 2) {
+        for (numero in 1..10 step 2)
             println("${numero}")
-        }
+
         println("---")
-        for (x in 10 downTo 0 step 2) {
+
+        for (x in 10 downTo 0 step 2)
             println(x)
-        }
     }
 
-    fun e10(): Unit {
+    private fun e10() {
         val lista = listOf("livro", "revista", "quadrinhos")
 
         lista
@@ -95,26 +94,9 @@ class BasicSyntax : Exercicio {
                 .forEach { println(it) }
     }
 
-    fun soma(a: Int, b: Int) = a + b
-    /*fun soma(a: Int, b: Int): Int {
-        return a + b
-    }*/
-
-    fun maior(a: Int, b: Int) = if (a > b) a else b
-
-    fun soma2(a: Int?, b: Int): Int {
-        if (a != null) {
-            return a + b
-        } else {
-            return b
-        }
-    }
-
-    fun tamanhoDoTexto(obj: Any): Int? {
-        if (obj is String)
-            return obj.length
-        else
-            return null
-    }
+    private fun soma(a: Int, b: Int) = a + b
+    private fun soma2(a: Int?, b: Int) = if (a != null) a + b else b
+    private fun maior(a: Int, b: Int) = if (a > b) a else b
+    private fun tamanhoDoTexto(obj: Any) = if (obj is String) obj.length else null
 
 }
