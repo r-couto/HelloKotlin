@@ -26,7 +26,7 @@ class BasicSyntax : Exercicio {
     }
 
     fun e4(): Unit {
-        val a = null
+        val a: Int? = 5
         val b = 25
         println("${if(a == null) 0 else a} + $b = ${soma2(a, b)}")
     }
