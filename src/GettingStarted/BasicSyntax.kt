@@ -5,11 +5,7 @@ import interfaces.Exercicio
 class BasicSyntax : Exercicio {
 
     override fun executar() {
-//        e1();
-//        e2();
-//        e3();
-//        e4();
-        e5();
+        e10();
     }
 
     fun e1(): Unit {
@@ -39,6 +35,64 @@ class BasicSyntax : Exercicio {
         val texto = "carro"
         val resultado = tamanhoDoTexto(texto)
         println("Tamanho do texto \"$texto\" = $resultado")
+    }
+
+    fun e6(): Unit {
+        val lista = listOf("maçã", "abacaxi", "uva")
+         for (item in lista.indices) {
+             println("$item -> ${lista[item]}")
+         }
+    }
+
+    fun e7(): Unit {
+        val lista = listOf("livro", "revista", "quadrinhos")
+        var index = 0
+        while (index < lista.size) {
+            println("$index -> ${lista[index]}")
+            index++
+        }
+    }
+
+    fun e8(): Unit {
+        val numero: Any = "2"
+        when (numero) {
+            "1"     -> println("um")
+            "2"     -> println("dois")
+            "3"     -> println("três")
+            is Int  -> println("inteiro")
+            !is String -> {
+                println("...")
+                println("não é string")
+            }
+            else    -> println("desconhecido")
+        }
+    }
+
+    fun e9(): Unit {
+        val lista = listOf("livro", "revista", "quadrinhos")
+
+        if ("livro" in lista) {
+            println("está na lista")
+        } else {
+            println("não está na lista")
+        }
+
+        for (numero in 1..10 step 2) {
+            println("${numero}")
+        }
+        println("---")
+        for (x in 10 downTo 0 step 2) {
+            println(x)
+        }
+    }
+
+    fun e10(): Unit {
+        val lista = listOf("livro", "revista", "quadrinhos")
+
+        lista
+                .sortedBy { it }
+                .map { it.toUpperCase() }
+                .forEach { println(it) }
     }
 
     fun soma(a: Int, b: Int) = a + b
